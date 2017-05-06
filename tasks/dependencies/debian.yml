@@ -1,0 +1,17 @@
+---
+- name: Install dependencies for Ubuntu
+  apt:
+    name: '{{ item }}'
+    state: installed
+    force: yes
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+      - build-essential
+      - libbz2-dev
+      - libreadline-dev
+      - libssl-dev
+      - libsqlite3-dev
+      - llvm
+      - zlib1g-dev
+  become: true

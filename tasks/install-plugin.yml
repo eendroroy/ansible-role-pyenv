@@ -1,0 +1,13 @@
+---
+- name: Check for previous installation of {{ item.name }}
+  stat:
+    path: '{{ pyenv.path }}/plugins/{{ item.name }}'
+  ignore_errors: true
+  register: plugin_dir
+
+- name: Clone {{ item.name }}
+  git:
+    repo: '{{ item.repo }}'
+    dest: '{{ pyenv.path }}/plugins/{{ item.name }}'
+
+  when: plugin_dir.stat.exists == false

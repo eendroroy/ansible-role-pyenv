@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: "indrajit"
+  description: pyenv
+  license: MIT
+  min_ansible_version: 2.2.0
+  version: 0.0.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise  # 12.04
+        - saucy    # 13.10
+        - trusty   # 14.04
+        - xenial   # 16.04
+  categories:
+    - development
+    - system
+    - pyenv
+    - python
+
+dependencies: []

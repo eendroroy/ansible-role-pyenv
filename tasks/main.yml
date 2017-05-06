@@ -1,0 +1,18 @@
+---
+- include: dependencies/debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: dependencies/centos.yml
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon"
+
+- include: install-pyenv.yml
+
+- name: Install plugins
+  include: install-plugin.yml
+  with_items:
+    - '{{ plugins }}'
+
+- name: Install pythons
+  include: install-python.yml
+  with_items:
+    - '{{ pythons }}'
