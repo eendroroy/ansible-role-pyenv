@@ -8,18 +8,20 @@ Ansible role to install pyenv
 Role Variables
 --------------
 
-Set `env: system` to install pyenv system-wide, or `env: local` for local installation.
+Set `pyenv_env: system` to install pyenv system-wide, or `pyenv_env: local` for local installation.
 
-Add plugins under `plugins` var.
+Add plugins under `pyenv.plugins` var.
 
 Define python versions to install under `pythons` var.
 
 Example:
 
 ```yml
-env: system
-plugins:
-  - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
+pyenv_env: system
+
+pyenv:
+  plugins:
+    - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
   - version: 2.4.0
@@ -41,7 +43,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: eendroroy.pyenv }
+         - { role: eendroroy.pyenv, pyenv_env: system }
 
 License
 -------

@@ -1,11 +1,11 @@
 ---
-env: system
+pyenv_env: system
 pyenv:
   repo: https://github.com/pyenv/pyenv.git
-  path: "{{ '/usr/local/pyenv' if env == 'system' else '~/.pyenv' }}"
+  path: "{{ '/usr/local/pyenv' if pyenv_env == 'system' else '~/.pyenv' }}"
 
-plugins:
-  - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
+  plugins:
+    - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
   - version: 2.7.13

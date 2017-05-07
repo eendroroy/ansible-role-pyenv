@@ -10,7 +10,7 @@
 - name: Install plugins
   include: install-plugin.yml
   with_items:
-    - '{{ plugins }}'
+    - '{{ pyenv.plugins }}'
 
 - name: Install pythons
   include: install-python.yml
