@@ -5,22 +5,14 @@
     state: installed
     update_cache: yes
   with_items:
-      - git
-      - zlib
       - zlib-devel
-      - gcc-c++
-      - patch
-      - readline
-      - readline-devel
-      - libyaml-devel
-      - libffi-devel
-      - openssl-devel
-      - make
       - bzip2
-      - autoconf
-      - automake
-      - libtool
-      - bison
-      - curl
+      - bzip2-devel
+      - readline-devel
+      - sqlite
       - sqlite-devel
+      - openssl-devel
+      - xz 
+      - xz-devel
   become: true
+
