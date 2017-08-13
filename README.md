@@ -24,7 +24,7 @@ pyenv:
     - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
-  - version: 2.4.0
+  - version: 2.7.13
 ```
 
 Supported OS
