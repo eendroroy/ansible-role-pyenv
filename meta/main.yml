@@ -13,7 +13,7 @@ galaxy_info:
         - saucy    # 13.10
         - trusty   # 14.04
         - xenial   # 16.04
-  categories:
+  galaxy_tags:
     - development
     - system
     - pyenv
