@@ -1,9 +1,9 @@
 ---
-- include: dependencies/debian.yml
-  when: ansible_os_family == 'Debian'
+- include: dependencies/apt.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- include: dependencies/centos.yml
-  when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon"
+- include: dependencies/yum.yml
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon" or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - include: install-pyenv.yml
 
