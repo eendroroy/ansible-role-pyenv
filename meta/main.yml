@@ -13,10 +13,6 @@ galaxy_info:
         - saucy    # 13.10
         - trusty   # 14.04
         - xenial   # 16.04
-    - name: EL
-      versions:
-        - 6
-        - 7
 
   galaxy_tags:
     - development
