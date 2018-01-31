@@ -10,8 +10,8 @@
     file:
       path: '{{ pyenv.path }}'
       state: directory
-      group: '{{ remote_user }}'
-      owner: '{{ remote_user }}'
+      group: '{{ ansible_user }}'
+      owner: '{{ ansible_user }}'
     become: true
 
   - name: Clone pyenv
