@@ -1,5 +1,5 @@
 ---
-- name: Install dependencies for Centos
+- name: Install dependencies for {{ ansible_os_family }}
   yum:
     name: '{{ item }}'
     state: installed

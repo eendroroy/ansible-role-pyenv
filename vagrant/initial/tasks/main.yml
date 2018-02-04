@@ -13,7 +13,7 @@
     var: release.stdout
 
 - block:
-  - name: Install dependencies [centos]
+  - name: Install dependencies [centos/rhel]
     raw: yum -y update && yum -y install python
     become: true
 
