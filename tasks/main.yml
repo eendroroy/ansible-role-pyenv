@@ -1,9 +1,9 @@
 ---
 - import_tasks: dependencies/apt.yml
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_os_family == 'Debian'
 
 - import_tasks: dependencies/yum.yml
-  when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon" or ansible_distribution == 'Red Hat Enterprise Linux'
+  when: ansible_os_family == 'RedHat'
 
 - import_tasks: install-pyenv.yml
 
