@@ -1,18 +1,18 @@
 ---
-- include: dependencies/apt.yml
+- import_tasks: dependencies/apt.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- include: dependencies/yum.yml
+- import_tasks: dependencies/yum.yml
   when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon" or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- include: install-pyenv.yml
+- import_tasks: install-pyenv.yml
 
 - name: Install plugins
-  include: install-plugin.yml
+  include_tasks: install-plugin.yml
   with_items:
     - '{{ pyenv.plugins }}'
 
 - name: Install pythons
-  include: install-python.yml
+  include_tasks: install-python.yml
   with_items:
     - '{{ pythons }}'
