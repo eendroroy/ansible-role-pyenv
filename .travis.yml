@@ -1,9 +1,13 @@
 ---
 language: python
-python: "2.7"
+python: 2.7
 
-# Use the new container infrastructure
-sudo: false
+env:
+  - ANSIBLE_VERSION=latest
+  - ANSIBLE_VERSION=2.4.0
+  - ANSIBLE_VERSION=2.3.0
+
+sudo: required
 
 # Install ansible
 addons:
@@ -13,7 +17,7 @@ addons:
 
 install:
   # Install ansible
-  - pip install ansible
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
 
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' >ansible.cfg
