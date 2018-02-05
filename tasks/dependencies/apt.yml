@@ -7,20 +7,20 @@
     update_cache: yes
     cache_valid_time: 3600
   with_items:
-      - make
-      - build-essential
-      - libssl-dev
-      - zlib1g-dev
-      - libbz2-dev
-      - libreadline-dev
-      - libsqlite3-dev
-      - wget
-      - curl
-      - llvm
-      - libncurses5-dev
-      - libncursesw5-dev
-      - xz-utils
-      - tk-dev
-      - zlib1g-dev
+    - git
+    - make 
+    - build-essential
+    - libssl-dev
+    - zlib1g-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - wget
+    - curl
+    - llvm
+    - libncurses5-dev
+    - libncursesw5-dev
+    - xz-utils
+    - tk-dev
   become: true
 

@@ -5,6 +5,7 @@
     state: installed
     update_cache: yes
   with_items:
+      - git
       - zlib-devel
       - bzip2
       - bzip2-devel
@@ -12,7 +13,6 @@
       - sqlite
       - sqlite-devel
       - openssl-devel
-      - xz 
+      - xz
       - xz-devel
   become: true
-
