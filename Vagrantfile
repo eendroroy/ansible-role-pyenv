@@ -31,3 +31,4 @@ Vagrant.configure("2") do |config|
     centos7.vm.network "private_network", ip: "192.168.33.13"  
   end
 end
+

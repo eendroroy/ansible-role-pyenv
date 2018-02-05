@@ -1,3 +1,4 @@
 ---
 - name: rehash
   raw: 'PYENV_ROOT={{ pyenv.path }} {{ pyenv.path }}/bin/pyenv rehash'
+

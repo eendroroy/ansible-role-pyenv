@@ -11,3 +11,4 @@
     dest: '{{ pyenv.path }}/plugins/{{ item.name }}'
 
   when: plugin_dir.stat.exists == false
+
