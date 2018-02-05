@@ -1,6 +1,21 @@
 ---
-- hosts: localhost
-  remote_user: root
+- name: Role test [pyenv] < pyenv_env = local >
+  hosts: localhost
+  connection: local
+
+  vars:
+    - pyenv_env: local
+
   roles:
-    - ..
+    - { role: ../ansible-role-pyenv }
+
+- name: Role test [pyenv] < pyenv_env = system >
+  hosts: localhost
+  connection: local
+
+  vars:
+    - pyenv_env: system
+
+  roles:
+    - { role: ../ansible-role-pyenv }
 
