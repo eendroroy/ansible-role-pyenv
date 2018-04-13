@@ -33,7 +33,7 @@ pyenv:
     - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
-  - version: 2.7.13
+  - version: 2.7.14
 ```
 
 ### Supported OS
@@ -45,15 +45,29 @@ pythons:
 - CentOS
     - 7
 - RHEL
+    - 6
     - 7
 
 ### Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: eendroroy.pyenv, pyenv_env: system }
+```yml
+---
+# Example playbook
+- name: pyenv setup
+  hosts: servers
+  gather_facts: yes
+
+  tasks:
+  - include_role:
+      name: eendroroy.pyenv
+    vars:
+      pyenv_env: system
+      pythons:
+        - version: 2.7.14
+        - version: 3.6.5
+```
 
 
 ## Contributing
