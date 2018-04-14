@@ -43,14 +43,13 @@ pythons:
     - trusty  (14.04)
     - xenial  (16.04) - xenial requires python2 to be installed for ansible support
 - CentOS
+    - 6
     - 7
 - RHEL
     - 6
     - 7
 
 ### Example Playbook
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ```yml
 ---
@@ -82,4 +81,3 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 ## License
 
 The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
