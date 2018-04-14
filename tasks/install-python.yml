@@ -9,4 +9,3 @@
   raw: 'PYENV_ROOT={{ pyenv.path }} {{ pyenv.path }}/bin/pyenv install {{ item.version }}'
   notify: rehash
   when: python.stat.exists == false
-

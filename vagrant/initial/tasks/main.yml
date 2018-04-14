@@ -34,4 +34,3 @@
     become: true
 
   when: release_like.stdout is search("debian")
-

@@ -10,4 +10,3 @@ pyenv:
 pythons:
   - version: 2.7.14
   - version: 3.6.5
-

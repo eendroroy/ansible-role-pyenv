@@ -18,4 +18,3 @@
 
   roles:
     - { role: ../ansible-role-pyenv }
-
