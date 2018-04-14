@@ -1,6 +1,11 @@
 [vagrant]
-192.168.33.10 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/precise/virtualbox/private_key
-192.168.33.11 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/trusty/virtualbox/private_key
-192.168.33.12 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/xenial/virtualbox/private_key
-192.168.33.13 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/centos7/virtualbox/private_key
+precise ansible_host=192.168.33.10
+trusty  ansible_host=192.168.33.11
+xenial  ansible_host=192.168.33.12
+centos6 ansible_host=192.168.33.13
+centos7 ansible_host=192.168.33.14
 
+[vagrant:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_user=vagrant
+ansible_ssh_private_key_file=.vagrant/machines/{{inventory_hostname}}/virtualbox/private_key

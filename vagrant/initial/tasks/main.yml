@@ -1,30 +1,31 @@
 ---
-- name: Determine distribution Debian
-  raw: lsb_release -a 2>/dev/null | grep Codename | awk '{printf("%s"), $2}'
-  register: release
+- name: Determine distribution type
+  raw: |
+    if [[ -e /etc/os-release ]]; then
+      awk -F"[='\"]+" '/^ID_LIKE/{print $2}' /etc/os-release
+    elif [[ -e /etc/redhat-release ]]
+      echo "rhel"
+    else
+      echo "unknown"
+    fi
+  register: release_like
+  changed_when: false
+  failed_when: release_like.stdout|length < 1 or "unknown" in release_like.stdout
   ignore_errors: yes
-
-- name: Determine distribution RHEL
-  raw: cat /etc/os-release | grep "ID=" | head -1 | tr '"' ' ' | awk '{gsub("ID=","",$NF); printf("%s"), $NF}'
-  register: release
-  ignore_errors: yes
-
-- debug:
-    var: release.stdout
 
 - block:
   - name: Install dependencies [centos/rhel]
-    raw: yum -y update && yum -y install python
+    raw: yum -y update && yum -y install python libselinux-python
     become: true
 
   - name: Cleanup yum
     raw: yum -y clean packages
     become: true
 
-  when: release.stdout == 'centos'
+  when: release_like.stdout is search("rhel")
 
 - block:
-  - name: Install dependencies [ubuntu]
+  - name: Install dependencies [ubuntu/debian]
     raw: apt-get -y update && apt-get install -y python-simplejson
     become: true
 
@@ -32,5 +33,5 @@
     raw: apt-get -y autoremove && apt-get -y autoclean
     become: true
 
-  when: release.stdout == 'ubuntu'
+  when: release_like.stdout is search("debian")
 

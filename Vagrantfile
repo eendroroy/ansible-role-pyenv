@@ -25,10 +25,16 @@ Vagrant.configure("2") do |config|
     xenial.vm.network "private_network", ip: "192.168.33.12"  
   end
 
+  config.vm.define 'centos6' do |centos6|
+    centos6.vm.box = "centos/6"
+    centos6.vm.box_check_update = false
+    centos6.vm.network "private_network", ip: "192.168.33.13"  
+  end
+
   config.vm.define 'centos7' do |centos7|
     centos7.vm.box = "centos/7"
     centos7.vm.box_check_update = false
-    centos7.vm.network "private_network", ip: "192.168.33.13"  
+    centos7.vm.network "private_network", ip: "192.168.33.14"  
   end
 end
 

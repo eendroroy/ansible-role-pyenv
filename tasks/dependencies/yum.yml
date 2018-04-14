@@ -1,8 +1,8 @@
 ---
-- name: Install dependencies for {{ ansible_os_family }}
+- name: Install dependencies for Red Hat family
   yum:
     name: '{{ item }}'
-    state: installed
+    state: present
     update_cache: yes
   with_items:
       - git

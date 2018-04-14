@@ -1,8 +1,8 @@
 ---
-- name: Install dependencies for {{ ansible_os_family }}
+- name: Install dependencies for debian family
   apt:
     name: '{{ item }}'
-    state: installed
+    state: present
     force: yes
     update_cache: yes
     cache_valid_time: 3600
