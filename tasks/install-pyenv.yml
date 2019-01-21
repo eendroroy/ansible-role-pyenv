@@ -31,4 +31,4 @@
       group: root
       mode: 0775
     become: true
-  when: pyenv_bin_dir.stat.exists == false
+  when: not pyenv_bin_dir.stat.exists
