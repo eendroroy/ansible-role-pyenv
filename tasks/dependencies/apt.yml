@@ -8,7 +8,7 @@
     cache_valid_time: 3600
   with_items:
     - git
-    - make 
+    - make
     - build-essential
     - libssl-dev
     - zlib1g-dev

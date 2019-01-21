@@ -18,6 +18,7 @@
     git:
       repo: '{{ pyenv.repo }}'
       dest: '{{ pyenv.path }}'
+      version: '{{ pyenv.branch }}'
       accept_hostkey: yes
 
   - name: Compile dynamic bash extension to speed up pyenv

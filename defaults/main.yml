@@ -2,6 +2,7 @@
 pyenv_env: system
 pyenv:
   repo: https://github.com/pyenv/pyenv.git
+  branch: master
   path: "{{ '/usr/local/pyenv' if pyenv_env == 'system' else '~/.pyenv' }}"
 
   plugins:
