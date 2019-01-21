@@ -1,5 +1,5 @@
 [vagrant]
-precise ansible_host=192.168.33.10
+bionic  ansible_host=192.168.33.10
 trusty  ansible_host=192.168.33.11
 xenial  ansible_host=192.168.33.12
 centos6 ansible_host=192.168.33.13

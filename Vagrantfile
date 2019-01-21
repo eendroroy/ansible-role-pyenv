@@ -3,14 +3,14 @@
 
 Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
-  	vb.gui = false
-  	vb.memory = 256
+    vb.gui = false
+    vb.memory = 256
   end
 
-  config.vm.define 'precise' do |precise|
-    precise.vm.box = "ubuntu/precise64"
-    precise.vm.box_check_update = false
-    precise.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.define 'bionic' do |bionic|
+    bionic.vm.box = "ubuntu/bionic64"
+    bionic.vm.box_check_update = false
+    bionic.vm.network "private_network", ip: "192.168.33.10"
   end
 
   config.vm.define 'trusty' do |trusty|
