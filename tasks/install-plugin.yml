@@ -9,5 +9,6 @@
   git:
     repo: '{{ item.repo }}'
     dest: '{{ pyenv.path }}/plugins/{{ item.name }}'
+    version: '{{ pyenv.branch }}'
 
-  when: plugin_dir.stat.exists == false
+  when: not plugin_dir.stat.exists

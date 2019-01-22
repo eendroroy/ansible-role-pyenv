@@ -1,14 +1,16 @@
 ---
 - name: Install dependencies for Red Hat family
   yum:
-    name: '{{ item }}'
+    name: '{{ packages }}'
     state: present
     update_cache: yes
-  with_items:
+  vars:
+    packages:
       - git
       - zlib-devel
       - bzip2
       - bzip2-devel
+      - libffi-devel
       - readline-devel
       - sqlite
       - sqlite-devel
