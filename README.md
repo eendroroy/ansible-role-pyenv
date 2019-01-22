@@ -33,7 +33,7 @@ pyenv:
     - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
-  - version: 2.7.14
+  - version: 2.7.15
 ```
 
 ### Supported OS
@@ -64,9 +64,14 @@ pythons:
     vars:
       pyenv_env: system
       pythons:
-        - version: 2.7.14
-        - version: 3.6.5
+        - version: 2.7.15
+        - version: 3.6.8
 ```
+
+## Python 3.7
+
+Python 3.7 does not currently compile on CentOS 6 and Ubuntu 14.04 "Trusty" due to OpenSSL version differences.
+See [Common Build Problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems#error-the-python-ssl-extension-was-not-compiled-missing-the-openssl-lib).
 
 
 ## Contributing

@@ -9,6 +9,7 @@
       - zlib-devel
       - bzip2
       - bzip2-devel
+      - libffi-devel
       - readline-devel
       - sqlite
       - sqlite-devel

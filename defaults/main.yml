@@ -9,5 +9,5 @@ pyenv:
     - { name: pyenv-virtualenv, repo: 'https://github.com/pyenv/pyenv-virtualenv.git' }
 
 pythons:
-  - version: 2.7.14
-  - version: 3.6.5
+  - version: 2.7.15
+  - version: 3.6.8
