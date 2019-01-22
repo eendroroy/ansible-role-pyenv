@@ -1,26 +1,27 @@
 ---
 - name: Install dependencies for debian family
   apt:
-    name: '{{ item }}'
+    name: '{{ packages }}'
     state: present
     force: yes
     update_cache: yes
     cache_valid_time: 3600
-  with_items:
-    - git
-    - make
-    - build-essential
-    - libssl-dev
-    - zlib1g-dev
-    - libbz2-dev
-    - libffi-dev
-    - libreadline-dev
-    - libsqlite3-dev
-    - wget
-    - curl
-    - llvm
-    - libncurses5-dev
-    - libncursesw5-dev
-    - xz-utils
-    - tk-dev
+  vars:
+    packages:
+      - git
+      - make
+      - build-essential
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libffi-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncurses5-dev
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
   become: true
